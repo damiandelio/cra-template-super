@@ -1,0 +1,28 @@
+{
+  "name": "cra-template-super",
+  "version": "0.1.1",
+  "description": "Super template using Redux, Router, Axios and Sass for Create React App",
+  "author": "De Lio Damian",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "template",
+    "redux",
+    "router",
+    "axios",
+    "sass"
+  ],
+  "main": "template.json",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/damiandelio/cra-template-super.git"
+  },
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "engines": {
+    "node": ">=10"
+  }
+}
