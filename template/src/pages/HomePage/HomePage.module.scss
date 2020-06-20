@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+.mainCointainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  h1 {
+    font-family: "Bangers", cursive;
+    font-size: 6rem;
+    margin: 0 0 4rem 0;
+    color: orangered;
+
+    span {
+       display: inline-block;
+       font-size: 3.5rem;
+       position: relative;
+       bottom: 1.3rem;
+       animation: floating 4.5s ease-in-out infinite;
+    }
+  }
+
+  a {
+    font-family: "Rubik", sans-serif;
+    font-size: 1.3rem;
+    color: #826544;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@keyframes floating {
+   0% {
+      transform: translate3d(0, 0, 0);
+   }
+   50% {
+      transform: translate3d(0, -0.4rem, 0);
+   }
+   100% {
+      transform: translate3d(0, 0, 0);
+   }
+}

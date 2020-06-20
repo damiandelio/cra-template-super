@@ -1,0 +1,12 @@
+@import-normalize; /* bring in normalize.css styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  min-width: 250px;
+}
