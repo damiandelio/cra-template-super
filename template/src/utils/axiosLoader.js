@@ -3,15 +3,20 @@ import { showLoader, hideLoader } from "../redux/modules/loader";
 import store from "../redux/store";
 
 // fetches data from API using axios and meanwhile show the loader
-function axiosLoader(cfg, onSuccess, onFail = () => {}) {
+function axiosLoader({ config, onSuccess = () => {}, onError = () => {} }) {
+  // show loader
   store.dispatch(showLoader());
-  axios(cfg)
+
+  // calling api with axios
+  axios(config)
     .then((res) => {
       onSuccess(res);
-      store.dispatch(hideLoader());
     })
     .catch((err) => {
-      onFail(err);
+      onError(err);
+    })
+    .finally(() => {
+      // hide loader
       store.dispatch(hideLoader());
     });
 }

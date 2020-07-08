@@ -9,7 +9,7 @@ import axiosLoader from "./utils/axiosLoader";
 const URL_BASE = "https://jsonplaceholder.typicode.com";
 const URL_COMMENTS = URL_BASE + "/comments";
 
-export const GET_COMMENTS_CFG = (postId) => ({
+export const getCommentsCfg = postId => ({
   method: "get",
   url: URL_COMMENTS,
   headers: {},
