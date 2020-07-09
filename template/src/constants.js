@@ -2,6 +2,6 @@ const CONSTANTS = {
   /*
     Constans here
   */
-};
+}
 
-export default CONSTANTS;
+export default CONSTANTS

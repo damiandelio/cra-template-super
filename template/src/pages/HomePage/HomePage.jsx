@@ -1,33 +1,46 @@
-import React, { useEffect } from 'react'
-import axiosLoader, { getCommentsCfg } from '../../axiosConfigs'
+import React from 'react'
+import { useQuery } from 'react-query'
+import { fetchComments } from '../../apiCalls'
 import styles from './HomePage.module.scss'
 
-const HomePage = () => {
-    let postId = 1;
+export default function HomePage() {
+  const { isLoading, isError, data, error } = useQuery('comments', () =>
+    fetchComments(1)
+  )
 
-    useEffect(() => {
-        axiosLoader({
-            config: getCommentsCfg(postId), // add your axios configs to /axiosConfigs.js
-            onSuccess: res => {
-                console.log('Api data:')
-                console.log(res.data)
-            },
-            onError: err => {
-                console.log(err)
-            } 
-        })
-    }, [postId])
+  if (isLoading) {
+    return <div>Loading...</div>
+  }
 
-    return (
-        <>
-            <main className={styles.mainCointainer} >
-                <h1>Super! <span role="img" aria-label="Super">🦸‍♂️</span></h1>
-                <a href="https://github.com/damiandelio/cra-template-super" target="_blank" rel="noopener noreferrer">
-                    GitHub
-                </a>
-            </main>
-        </>
-    )
+  if (isError) {
+    return <div>Error: {error}</div>
+  }
+
+  return (
+    <>
+      <div className={styles.superContainer}>
+        <h1>
+          Super!
+          <span role='img' aria-label='Super'>
+            🦸‍♂️
+          </span>
+        </h1>
+        <a
+          href='https://github.com/damiandelio/cra-template-super'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          GitHub
+        </a>
+      </div>
+      <div className={styles.messagesContainer}>
+        {data.map((message) => (
+          <section key={message.id}>
+            <h4>{message.name}</h4>
+            <p>{message.body}</p>
+          </section>
+        ))}
+      </div>
+    </>
+  )
 }
-
-export default HomePage
