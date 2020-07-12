@@ -1,24 +1,24 @@
 {
-  "env": {
-    "browser": true,
-    "es2020": true,
-    "node": true
-  },
-  "extends": [
-    "prettier",
-    "plugin:react-hooks/recommended"
-  ],
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "sourceType": "module"
-  },
-  "plugins": ["react"],
-  "rules": {
-    "strict": 0,
-    "indent": ["error", 2],
-    "semi": ["error", "never"]
+   "env": {
+     "browser": true,
+     "es2020": true,
+     "node": true
+   },
+   "extends": [
+     "prettier",
+     "plugin:react-hooks/recommended"
+   ],
+   "parser": "babel-eslint",
+   "parserOptions": {
+     "ecmaFeatures": {
+       "jsx": true
+     },
+     "sourceType": "module"
+   },
+   "plugins": ["react"],
+   "rules": {
+    "strict": "off",
+    "indent": ["warn", 3],
+    "semi": ["warn", "never"]
   }
-}
+ }

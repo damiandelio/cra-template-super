@@ -4,15 +4,15 @@ import axios from 'axios'
 const URL_BASE = 'https://jsonplaceholder.typicode.com'
 const URL_COMMENTS = URL_BASE + '/comments'
 
-export async function fetchComments(postId) {
-  const { data } = await axios({
-    method: 'get',
-    url: URL_COMMENTS,
-    headers: {},
-    params: {
-      postId
-    }
-  })
+export const getComments = async ({ postId }) => {
+   const { data } = await axios({
+      method: 'get',
+      url: URL_COMMENTS,
+      headers: {},
+      params: {
+         postId
+      }
+   })
 
-  return data
+   return data
 }

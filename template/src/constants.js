@@ -1,7 +1,7 @@
 const CONSTANTS = {
-  /*
-    Constans here
-  */
+   /*
+     Constans here
+   */
 }
 
 export default CONSTANTS

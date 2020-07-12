@@ -5,12 +5,12 @@ import HomePage from './pages/HomePage/HomePage'
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
 
 const router = (
-  <Router>
-    <Switch>
-      <Route exact path='/' component={HomePage} />
-      <Route component={NotFoundPage} />
-    </Switch>
-  </Router>
+   <Router>
+      <Switch>
+         <Route exact path='/' component={HomePage} />
+         <Route component={NotFoundPage} />
+      </Switch>
+   </Router>
 )
 
 export default router
